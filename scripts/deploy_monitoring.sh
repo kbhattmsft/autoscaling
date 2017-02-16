@@ -19,9 +19,9 @@ echo =====
 docker \
   service create --name node-exporter \
   --mode global \
-  --network monitoring \
-  --label com.docker.stack.namespace=monitoring \
-  --container-label com.docker.stack.namespace=monitoring \
+  --network $MONITORING_NET \
+  --label com.docker.stack.namespace=$MONITORING_NET \
+  --container-label com.docker.stack.namespace=$MONITORING_NET \
   --mount type=bind,source=/proc,target=/host/proc \
   --mount type=bind,source=/sys,target=/host/sys \
   --mount type=bind,source=/,target=/rootfs \

@@ -19,8 +19,10 @@ Sample dashboard looks like following when cputest is running, demonstrating sca
 
 <img width="880" src="https://github.com/kbhattmsft/autoscaling/raw/master/images/autoscale_CPU.PNG">  
 
-* cputest is iteslf deployed as a swarm mode service in the global mode.
+* All scripts in /scripts directory.
+* cputest (cputest.sh) is itself deployed as a swarm mode service in the global mode.
 * clean_swarm.sh utility for cleaning up "Down" nodes from swarm master after cluster scales in.
+* Additional container allocation visualization [tool](https://github.com/ManoMarks/docker-swarm-visualizer) can be deployed using setup_vizualiser.sh script.
 
 #### Deploy and Visualize
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkbhattmsft%2Fautoscaling%2Fmaster%2Fazuredeploy.json" target="_blank"><img alt="Deploy to Azure" src="http://azuredeploy.net/deploybutton.png" /></a>

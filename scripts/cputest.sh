@@ -14,7 +14,7 @@ fi
 docker \
   service create --name cputest \
   --mode global \
-  --network TEST_NET \
+  --network $TEST_NET \
   --label com.docker.stack.namespace=cputest \
   --container-label com.docker.stack.namespace=cputest \
   -e STRESS_SYSTEM_FOR=10m \

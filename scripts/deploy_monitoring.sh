@@ -15,24 +15,24 @@ echo =====
 echo Create node-exporter service...
 echo =====
 
+
 docker \
   service create --name node-exporter \
   --mode global \
-  --network $MONITORING_NET \
-  --label com.docker.stack.namespace=$MONITORING_NET \
-  --container-label com.docker.stack.namespace=$MONITORING_NET \
+  --network monitoring \
+  --label com.docker.stack.namespace=monitoring \
+  --container-label com.docker.stack.namespace=monitoring \
   --mount type=bind,source=/proc,target=/host/proc \
   --mount type=bind,source=/sys,target=/host/sys \
   --mount type=bind,source=/,target=/rootfs \
   --mount type=bind,source=/etc/hostname,target=/etc/host_hostname \
   -e HOST_HOSTNAME=/etc/host_hostname \
   basi/node-exporter:v0.1.1 \
-  -collector.procfs /host/proc \
-  -collector.sysfs /host/sys \
-  -collector.filesystem.ignored-mount-points "^/(sys|proc|dev|host|etc)($|/)" \
+  --collector.procfs /host/proc \
+  --collector.sysfs /host/sys \
+  --collector.filesystem.ignored-mount-points "^/(sys|proc|dev|host|etc)($|/)" \
   --collector.textfile.directory /etc/node-exporter/ \
-  --collectors.enabled="conntrack,diskstats,entropy,filefd,filesystem,loadavg,mdadm,meminfo,netdev,netstat,stat,textfile
-,time,vmstat,ipvs"
+  --collectors.enabled="conntrack,diskstats,entropy,filefd,filesystem,loadavg,mdadm,meminfo,netdev,netstat,stat,textfile,time,vmstat,ipvs"
 
 echo =====
 echo Create Prometheus service...
@@ -41,6 +41,8 @@ echo =====
 docker \
   service create \
   --name prometheus \
+  --label com.docker.stack.namespace=$MONITORING_NET \
+  --container-label com.docker.stack.namespace=$MONITORING_NET \
   --network $MONITORING_NET \
   --publish 9090:9090 \
   basi/prometheus-swarm:v0.4.0

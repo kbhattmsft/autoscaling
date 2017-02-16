@@ -1,5 +1,15 @@
 # Autoscaling
-Container as a Service using Azure VM Scale Sets and Docker Swarm (mode)
+## Container as a Service using Azure VM Scale Sets and Docker Swarm (mode)
+* Realized using Azure [VM Scale Sets](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview)
+* [Linux Diagnostics extension](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-classic-diagnostic-extension) used for getting the guest VM metrics used for triggering scaling in/out
+* CPU bound tested with stress tool encapsulated as a docker [image](https://hub.docker.com/r/petarmaric/docker.cpu-stress-test/)
+* Azure deployment jsons created with [acs-engine](https://github.com/Azure/acs-engine) chosing DockerCE (Swarm Mode) orchestrator. 
+* The scripts dir contains utility scripts to set up the monitoring stack consisting of:
+  * [cAdvisor](https://github.com/google/cadvisor) for container metrics, 
+  * [node-exporter](https://github.com/prometheus/node_exporter) voor VM metrics, 
+  * [Prometheus](https://prometheus.io) for making the time series data stream,
+  * [Grafana](http://grafana.org/) dashboard for displaying the metrics.
+
 #### Deploy and Visualize
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkbhattmsft%2Fautoscaling%2Fmaster%2Fazuredeploy.json" target="_blank"><img alt="Deploy to Azure" src="http://azuredeploy.net/deploybutton.png" /></a>
 

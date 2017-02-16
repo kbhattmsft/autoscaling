@@ -20,7 +20,7 @@ A solution which scales both at the container and the IaaS levels for providing 
 
 Architecture diagram is as follows:
 
-<img width="880" src="https://github.com/kbhattmsft/autoscaling/raw/master/images/prometheus-on-docker.png">
+<img width="50%" src="https://github.com/kbhattmsft/autoscaling/raw/master/images/prometheus-on-docker.png">
 
 Sample dashboard looks like following when cputest is running, demonstrating scaling out of the smarm mode cluster automatically and scaling in when cputest is stopped:
 

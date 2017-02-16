@@ -1,0 +1,32 @@
+{
+  "agentpublicCount": {
+    "value": 2
+  },
+  "agentpublicEndpointDNSNamePrefix": {
+    "value": "swarmm-agent-02"
+  },
+  "agentpublicSubnet": {
+    "value": "10.0.0.0/16"
+  },
+  "agentpublicVMSize": {
+    "value": "Standard_D2_v2"
+  },
+  "firstConsecutiveStaticIP": {
+    "value": "172.16.0.5"
+  },
+  "linuxAdminUsername": {
+    "value": "azureuser"
+  },
+  "masterEndpointDNSNamePrefix": {
+    "value": "swarmm-master-02"
+  },
+  "masterSubnet": {
+    "value": "172.16.0.0/24"
+  },
+  "masterVMSize": {
+    "value": "Standard_D2_v2"
+  },
+  "sshRSAPublicKey": {
+    "value": "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlGoL/6jVVV1ijMdQ7erMIm3oUY+DKzl9+cdFOAoVIXek/Aza0xb+DsOzr7dx8FIoaLHeUw3rmcPjD8RE0WOjnm4M/XEthxTcPKNW0WywTwAqGmqYK7mCov4R7pgtJ/XaR6RPAEagl/hj4Amixv0iyrIwGaOy8yJbbUjCVLIDz2504WBvhRAoQ7uHLnKunCSWmlL5mkje6yLHJlBxitxInUt7kvFgh3Pe3i4fg7oehoPjesf2hWNiyONB48uEW6m+CAVKmGOnD405IrumqVKsvWOu6uBqRVFwcRjLm3wmPEpULb5IcqV4nBTQUwwe6UJoIjrSDL/pl5XogIGlFdvt2w== azureuser@linuxvm"
+  }
+}

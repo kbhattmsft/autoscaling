@@ -2,7 +2,7 @@
 set x
 echo =====
 echo Install Docker Swarm Mode Visualizer
-echo \(Requires \"local\" docker daemon if run on Swarm Master and needs to attach on docker0\)
+echo '('Requires \"local\" docker daemon if run on Swarm Master and needs to attach on docker0')'
 echo =====
 DOCKER0=172.17.0.1 
 docker \

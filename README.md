@@ -1,8 +1,11 @@
 # Autoscaling
 ## Container as a Service using Azure VM Scale Sets and Docker Swarm (mode)
+
+A solution which scales both at the container and the IaaS levels for providing true compute elasticity, on-demand. Ideal for deploying workloads with variable footprint. Comes with an example monitoring stack.
+
 * Realized using Azure [VM Scale Sets](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview)
 * [Linux Diagnostics extension](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-classic-diagnostic-extension) used for getting the guest VM metrics used for triggering scaling in/out based on CPU and Memory use.
-* CPU bound tested with [stress](http://manpages.ubuntu.com/manpages/precise/man1/stress.1.html) tool encapsulated as a docker [image](https://hub.docker.com/r/petarmaric/docker.cpu-stress-test/)
+* CPU bound tested with [stress](http://people.seas.harvard.edu/~apw/stress/) tool encapsulated as a docker [image](https://hub.docker.com/r/petarmaric/docker.cpu-stress-test/)
 * Azure deployment jsons created with [acs-engine](https://github.com/Azure/acs-engine) chosing DockerCE (Swarm Mode) orchestrator. 
 * The scripts dir contains utility scripts to set up the monitoring stack consisting of:
   * [cAdvisor](https://github.com/google/cadvisor) for container metrics, 

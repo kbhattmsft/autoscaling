@@ -1,5 +1,5 @@
 #!/bin/bash
-set x
+set -x
 echo =====
 echo Install Docker Swarm Mode Visualizer
 echo '('Requires \"local\" docker daemon if run on Swarm Master and needs to attach on docker0')'

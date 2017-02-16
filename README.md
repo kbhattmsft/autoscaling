@@ -8,7 +8,13 @@
   * [cAdvisor](https://github.com/google/cadvisor) for container metrics, 
   * [node-exporter](https://github.com/prometheus/node_exporter) voor VM metrics, 
   * [Prometheus](https://prometheus.io) for making the time series data stream,
-  * [Grafana](http://grafana.org/) dashboard for displaying the metrics.
+  * [Grafana](http://grafana.org/) dashboard for displaying the metrics.
+
+Sample dashboard looks like following when cputest is running, demonstrating scaling out of the smarm mode cluster automatically and scaling in when cputest is stopped:
+
+<img width="880" src="https://github.com/kbhattmsft/autoscaling/raw/master/images/autoscale_CPU.PNG">  
+
+cputest is iteslf deployed as a swarm mode service in the global mode.
 
 #### Deploy and Visualize
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkbhattmsft%2Fautoscaling%2Fmaster%2Fazuredeploy.json" target="_blank"><img alt="Deploy to Azure" src="http://azuredeploy.net/deploybutton.png" /></a>

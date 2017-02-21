@@ -3,9 +3,17 @@ set -x
 echo =====
 echo Enable docker experimental mode...
 echo =====
-sudo sed -i '/ExecStart=\//s/$/ -H fd:\/\/ --experimental=true --metrics-addr=0.0.0.0:4999/' /etc/systemd/system/docker.service.d/override.conf
-sudo systemctl daemon-reload
-sudo systemctl restart docker
+CONF_FILE=/etc/systemd/system/docker.service.d/override.conf
+if [ -f $CONF_FILE ];
+then
+  sudo sed -i '/ExecStart=\//s/$/ -H fd:\/\/ --experimental=true --metrics-addr=0.0.0.0:4999/' $CONF_FILE
+  sudo systemctl daemon-reload
+  sudo systemctl restart docker
+else
+  echo "Can't find docker config file: $CONF_FILE aborting..."
+  exit
+fi
+
 
 echo =====
 echo Check and create network...

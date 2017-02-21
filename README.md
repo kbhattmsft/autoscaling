@@ -13,7 +13,7 @@ A solution which scales both at the container and the IaaS levels for providing 
   * cputest (cputest.sh) is itself deployed as a swarm mode service in the global mode.
   * clean_swarm.sh utility for cleaning up "Down" nodes from swarm master after cluster scales in.
   * Additional container allocation visualization [tool](https://github.com/ManoMarks/docker-swarm-visualizer) can be deployed using setup_visualizer.sh script. This needs to be run on the master on the "local" docker daemon bound to the docker0 eth interface.
-  * setup_monitoring.sh for deploying the monitoring stack consisting of the following components:
+  * deploy_monitoring.sh for deploying the monitoring stack consisting of the following components:
     * [cAdvisor](https://github.com/google/cadvisor) for container metrics, 
     * [node-exporter](https://github.com/prometheus/node_exporter) voor VM metrics, 
     * [Prometheus](https://prometheus.io) for making the time series data stream,

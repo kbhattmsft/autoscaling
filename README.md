@@ -9,7 +9,7 @@ A solution which scales both at the container and the IaaS levels for providing 
 * Azure deployment jsons created with [acs-engine](https://github.com/Azure/acs-engine) chosing DockerCE (Swarm Mode) orchestrator.
 * Grafana dashboard json in /grafana directory.
 * You need to enable docker experimental mode in order to switch on swarm mode service logging and docker metrics. For that:
-  * add this: -H fd:// --experimental=true --metrics-addr=0.0.0.0:4999 to ExecStart in /etc/systemd/system/docker.service.d/override.conf
+  * add this: <code>-H fd:// --experimental=true --metrics-addr=0.0.0.0:4999</code> to ExecStart in /etc/systemd/system/docker.service.d/override.conf
   * reload and restart the docker daemon: 
     * sudo systemctl daemon-reload
     * sudo systemctl restart docker
@@ -39,4 +39,4 @@ Sample dashboard looks like following when cputest is running, demonstrating sca
 
 #### MSFT OSCC
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments. All credit goes to contributors of the individual components used in this project, where applicable.

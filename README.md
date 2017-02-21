@@ -8,11 +8,7 @@ A solution which scales both at the container and the IaaS levels for providing 
 * CPU bound tested with [stress](http://people.seas.harvard.edu/~apw/stress/) tool encapsulated as a docker [image](https://hub.docker.com/r/petarmaric/docker.cpu-stress-test/)
 * Azure deployment jsons created with [acs-engine](https://github.com/Azure/acs-engine) chosing DockerCE (Swarm Mode) orchestrator.
 * Grafana dashboard json in /grafana directory.
-* You need to enable docker experimental mode in order to switch on swarm mode service logging and docker metrics. For that:
-  * add this: <code>-H fd:// --experimental=true --metrics-addr=0.0.0.0:4999</code> to ExecStart in /etc/systemd/system/docker.service.d/override.conf
-  * reload and restart the docker daemon: 
-    * <code>sudo systemctl daemon-reload</code>
-    * <code>sudo systemctl restart docker</code>
+* Docker experimental mode enabled before installing monitoring stack.
 * All scripts in /scripts directory.
   * cputest (cputest.sh) is itself deployed as a swarm mode service in the global mode.
   * clean_swarm.sh utility for cleaning up "Down" nodes from swarm master after cluster scales in.

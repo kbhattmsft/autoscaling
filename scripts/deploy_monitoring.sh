@@ -1,6 +1,13 @@
 #!/bin/bash
 set -x
 echo =====
+echo Enable docker experimental mode...
+echo =====
+sudo sed -i '/ExecStart=\//s/$/ -H fd:\/\/ --experimental=true --metrics-addr=0.0.0.0:4999/' /etc/systemd/system/docker.service.d/override.conf
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
+echo =====
 echo Check and create network...
 echo =====
 

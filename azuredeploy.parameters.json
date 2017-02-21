@@ -3,7 +3,7 @@
     "value": 2
   },
   "agentpublicEndpointDNSNamePrefix": {
-    "value": "swarmm-agent-02"
+    "value": "swarmm-agent-03"
   },
   "agentpublicSubnet": {
     "value": "10.0.0.0/16"
@@ -18,7 +18,7 @@
     "value": "azureuser"
   },
   "masterEndpointDNSNamePrefix": {
-    "value": "swarmm-master-02"
+    "value": "swarmm-master-03"
   },
   "masterSubnet": {
     "value": "172.16.0.0/24"

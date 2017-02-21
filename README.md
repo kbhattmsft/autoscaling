@@ -11,8 +11,8 @@ A solution which scales both at the container and the IaaS levels for providing 
 * You need to enable docker experimental mode in order to switch on swarm mode service logging and docker metrics. For that:
   * add this: <code>-H fd:// --experimental=true --metrics-addr=0.0.0.0:4999</code> to ExecStart in /etc/systemd/system/docker.service.d/override.conf
   * reload and restart the docker daemon: 
-    * sudo systemctl daemon-reload
-    * sudo systemctl restart docker
+    * <code>sudo systemctl daemon-reload</code>
+    * <code>sudo systemctl restart docker</code>
 * All scripts in /scripts directory.
   * cputest (cputest.sh) is itself deployed as a swarm mode service in the global mode.
   * clean_swarm.sh utility for cleaning up "Down" nodes from swarm master after cluster scales in.

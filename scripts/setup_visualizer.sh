@@ -1,12 +1,11 @@
 #!/bin/bash
 set -x
 echo =====
-echo Install Docker Swarm Mode Visualizer
-echo '('Requires \"local\" docker daemon if run on Swarm Master and needs to attach on docker0')'
+echo Install Docker Swarm Mode Visualizer with external port 8087
 echo =====
-DOCKER0=$(ifconfig docker0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
-docker \
-  run -it -d -p 8180:8080 \
-  -e HOST=$DOCKER0 \
-  -v /var/run/docker.sock:/var/run/docker.sock \
+docker service create \
+  --name=viz \
+  --publish=8087:8080/tcp \
+  --constraint=node.role==manager \
+  --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock \
   manomarks/visualizer
